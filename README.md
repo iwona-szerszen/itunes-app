@@ -29,7 +29,7 @@ Project created with:
 To run this project, install it locally using npm:
 
 ```
- $ cd currency-transactions-app
+ $ cd itunes-app
  $ npm install
 ```
 and then start the app in development mode:
