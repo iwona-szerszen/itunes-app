@@ -1,38 +1,257 @@
-.App {
-  text-align: center;
+:root {
+  --raspberry: #fa2d48;
+  --backgroundLight: #333131;
+  --backgroundMiddle: rgba(255,255,255,.02);
+  --backgroundDark: #252526;
+  --light: #dfdfdf;
+  --blue: #2c7bc6;
+  --greyLight: rgba(255,255,255,.5);
+  --grey: rgba(255,255,255,.2);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: var(--backgroundLight);
+  color: var(--light);
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a {
+  text-decoration: none;
+  color: var(--raspberry);
 }
 
-.App-header {
-  background-color: #282c34;
+a:hover {
+  color: var(--blue) !important;
+}
+
+ul {
+  list-style-type: none;
+}
+
+label {
+  cursor: pointer;
+}
+
+input:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 0.15rem var(--raspberry) !important;
+}
+
+input[type="radio"] {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+
+input[type="radio"]:not(:checked) + button {
+  background-color: var(--backgroundLight);
+}
+
+input[type="radio"]:not(:checked) + button:hover {
+  color: var(--raspberry);
+}
+
+img {
+  border-radius: 6px;
+  width: 100%;
+}
+
+.button {
+  background-color: var(--raspberry);
+  color: var(--light);
+  border: none;
+  border-radius: 6px;
+  padding: 3px 6px;
+}
+
+.button:hover {
+  color: var(--backgroundDark);
+}
+
+.button-blue {
+  background: var(--blue);
+}
+
+.button-disabled {
+  cursor: not-allowed;
+}
+
+.button-disabled:hover {
+  color: var(--light);
+}
+
+.text-md {
+  font-size: 0.8rem;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-grey-light {
+  color: var(--greyLight);
+}
+
+.text-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.line-height-normal {
+  line-height: 1rem;
+}
+
+.icon-basket {
+  padding-left: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.icon-basket:hover {
+  color: var(--raspberry);
+}
+
+.container-left {
+  border-right: 1px solid var(--grey);
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.container-right {
+  background-color: var(--backgroundDark);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header, .basket-shortcut {
+  margin: 1rem 0;
+}
+
+.header__title {
+  font-size: 1.5rem;
+}
+
+.basket-shortcut__title {
+  font-size: 1.2rem;
+  text-align: right;
+}
+
+.basket-shortcut__title--rasp {
+  color: var(--raspberry);
+}
+
+.filters__input-group {
+  margin-top: 0.5rem;
+}
+
+.filters__loader {
+  margin-top: 1rem;
+  color: var(--raspberry);
+}
+
+.filters__results {
+  margin-top: 0.1rem;
+  padding: 0.3rem;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 1px  var(--grey);
+}
+
+.filters__result {
+  line-height: 1.5rem;
+  padding: 0 0.3rem;
+}
+
+.filters__result:hover {
+  background-color: var(--raspberry);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.modal__icon {
+  font-size: 3rem;
+  color: var(--raspberry);
+}
+
+.modal__title {
+  margin-top: 0.6rem;
+}
+
+.modal__extra-info {
+  margin-bottom: 1.1rem;
+}
+
+.albums__album {
+  padding: 0.7rem;
+}
+
+.albums__title {
+  font-size: 0.95rem;
+  margin-top: 0.3rem;
+}
+
+.albums__title:hover {
+  white-space: normal;
+}
+
+.albums__date {
+  color: var(--greyLight);
+}
+
+.album__image {
+  padding-right: 0;
+  margin-bottom: 1rem;;
+}
+
+.songs {
+  padding: 0;
+}
+
+.songs__li {
+  line-height: 2.2rem;
+}
+
+.songs__li:hover {
+  background-color: var(--backgroundLight);
+  border-radius: 3px;
+}
+
+.songs__li--light {
+  background-color: var(--backgroundMiddle);
+  border-radius: 3px;
+}
+
+.songs__number {
+  min-width: 1.3rem;
+  width: 4%;
+  text-align: right;
+  margin-right: 0.9rem;
+}
+
+.songs__title {
+  width: 78%;
+}
+
+.songs__duration {
+  width: 8%;
+}
+
+.songs__price {
+  width: 10%;
+}
+
+.basket-modal__icon {
+  font-size: 2rem;
+}
+
+.basket-modal__button {
+  font-size: 1rem;
+  margin: 1.4rem 0.6rem 0;
+}
+
+.basket-modal__table {
+  margin-top: 1.5rem;
 }
